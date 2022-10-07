@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  header {
+    background-color: #BCBABE;
+    padding: 0 20px;
+  }
+  nav {
+    display: flex;
+  }
+  nav li {
+    list-style: none;
+    padding: 15px;
+    font-size: 18px;
+  }
+  /* to align the nxt elements to right */
+  nav li:nth-of-type(2) {
+    margin-left: auto;
+  }
+  nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0 4px;
+    border-bottom: 3px;
+  }
+  nav a:hover{
+    border-bottom: 3px solid;
+  }
+  #nav-mobile {
+    display: none;
+    height: 40vh;
+  }
+  #nav-mobile a{
+    border-bottom: 3px;
+  }
+  #nav-mobile a:hover{
+    border-bottom: solid 3px;
+  }
+  .logo-main a {
+    padding: 10px;
+    background-color: black;
+    color: white !important;
+    border-radius: 3px;
+  }
+  .btns-nav-mobile {
+    display: none;
+  }
+  span {
+    padding: 20px;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+  }
+  span i {
+    color: black;
+  }
+  .sects p {
+    text-align: center;
+  }
+  #hero {
+    background-color: #A1D6E2;
+    height: 600px;
+  }
+  #service {
+    background-color: #1995AD;
+    height: 500px;
+  }
+
+  /* responsiveness */
+  @media screen and (max-width: 768px) {
+    .links-navbar {
+      display: none;
+    }
+    .nav-menu {
+      font-size: 20px;
+      margin-left: auto;
+      display: block;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    header {
+      padding: 10px;
+    }
+    nav li {
+      padding: 10px;
+    }
+  }

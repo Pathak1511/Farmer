@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+
+    <!-- Play CDN -->
+    <script src="{{url_for('static',filename='css/tailwind.css')}}"></script>
+    <!-- CSS filess -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/yield-prediction.css')}}"
+    />
+
+    <!-- font awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/cc5a6a6929.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Metadata - Farmer Assistance</title>
+  </head>
+
+  <body>
+    <header>
+      <nav id="nav-laptop">
+        <li class="logo-main"><a href="index.html">Harvestify</a></li>
+        <li class="links-navbar"><a href="crop-quality.html">Crop</a></li>
+        <li class="links-navbar"><a href="yield-prediction.html">Yield</a></li>
+        <li class="links-navbar">
+          <a href="disease-detection.html">Disease</a>
+        </li>
+        <li class="links-navbar"><a href="weed-detection.html">Weed</a></li>
+        <li class="links-navbar"><a href="contact-us.html">Contact Us</a></li>
+        <li class="btns-nav-mobile nav-menu" onclick="openNavbarForMobile()">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </li>
+      </nav>
+      <!-- navsection for mobile -->
+      <nav id="nav-mobile">
+        <li><a href="crop-quality.html">Crop</a></li>
+        <li id="setting"><a href="yield-prediction.html">Yield</a></li>
+        <li><a href="disease-detection.html">Disease</a></li>
+        <li><a href="weed-detection.html">Weed</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <span onclick="closeNavbarForMobile()"
+          ><a href="#"><i class="fa-solid fa-xmark"></i></a
+        ></span>
+      </nav>
+    </header>
+    <main>
+      <div class="block p-6 rounded-lg shadow-lg bg-white w-96 css-align">
+        <form method="post" action="/predict">
+          <div class="form-group mb-4">
+            <label
+              for="nitrogen"
+              class="form-label inline-block mb-2 text-gray-700"
+              >Nitrogen</label
+            >
+            <input
+              type="number"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              name="nitrogen"
+              aria-describedby="numberN"
+              placeholder="Enter Nitrogen Value"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label
+              for="Phosphorus"
+              class="form-label inline-block mb-2 text-gray-700"
+              >Phosphorus</label
+            >
+            <input
+              type="number"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              name="phosphorus"
+              aria-describedby="numberP"
+              placeholder="Enter Phosphorus Value"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label
+              for="Potassium"
+              class="form-label inline-block mb-2 text-gray-700"
+              >Potasium</label
+            >
+            <input
+              type="number"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              name="potassium"
+              aria-describedby="numberK"
+              placeholder="Enter Pottasium Value"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label
+              for="Temperature"
+              class="form-label inline-block mb-2 text-gray-700"
+              >Temperature</label
+            >
+            <input
+              type="number"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              name="temperature"
+              aria-describedby="temperature"
+              placeholder="Enter Temperature Value"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label
+              for="Humidity"
+              class="form-label inline-block mb-2 text-gray-700"
+              >Humidity</label
+            >
+            <input
+              type="number"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              name="humidity"
+              aria-describedby="humidity"
+              placeholder="Enter Humidity Value"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label for="pH" class="form-label inline-block mb-2 text-gray-700"
+              >pH</label
+            >
+            <input
+              type="number"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              name="pH"
+              aria-describedby="numberpH"
+              placeholder="Enter pH Value"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label
+              for="rainfall"
+              class="form-label inline-block mb-2 text-gray-700"
+              >Rainfall</label
+            >
+            <input
+              type="number"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              name="rainfall"
+              aria-describedby="numberrainfall"
+              placeholder="Enter Rainfall Value"
+            />
+          </div>
+          <button
+            type="submit"
+            class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            id="predictBtn"
+          >
+            Predict
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="{{url_for('static',filename='/js/style.js')}}"></script>
+    <script src="{{url_for('static',filename='/js/alert.js')}}"></script>
+    <!-- <script src="{{url_for('static',filename='/js/axios.js')}}"></script> -->
+    <!-- <script src="{{url_for('static',filename='/js/yield.js')}}"></script> -->
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+
+    <!-- CSS filess -->
+    <link href="{{url_for('static',filename='css/style.css')}}" />
+    <link rel="stylesheet" href="css/yield-prediction.css" />
+
+    <!-- font awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/cc5a6a6929.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Metadata - Farmer Assistance</title>
+  </head>
+
+  <body>
+    <header>
+      <nav id="nav-laptop">
+        <li class="logo-main"><a href="index.html">Harvestify</a></li>
+        <li class="links-navbar"><a href="crop-quality.html">Crop</a></li>
+        <li class="links-navbar"><a href="yield-prediction.html">Yield</a></li>
+        <li class="links-navbar">
+          <a href="disease-detection.html">Disease</a>
+        </li>
+        <li class="links-navbar"><a href="weed-detection.html">Weed</a></li>
+        <li class="links-navbar"><a href="contact-us.html">Contact Us</a></li>
+        <li class="btns-nav-mobile nav-menu" onclick="openNavbarForMobile()">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </li>
+      </nav>
+      <!-- navsection for mobile -->
+      <nav id="nav-mobile">
+        <li><a href="crop-quality.html">Crop</a></li>
+        <li id="setting"><a href="yield-prediction.html">Yield</a></li>
+        <li><a href="disease-detection.html">Disease</a></li>
+        <li><a href="weed-detection.html">Weed</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <span onclick="closeNavbarForMobile()"
+          ><a href="#"><i class="fa-solid fa-xmark"></i></a
+        ></span>
+      </nav>
+    </header>
+    <main>
+      <section class="forms forms-style">
+        <h2>{{ data }}</h2>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="js/style.js"></script>
+  </body>
+</html>
